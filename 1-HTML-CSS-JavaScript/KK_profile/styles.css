@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+.center-body {
+    width: 80%;
+    margin: auto;
+}
+
+body {
+    background-color: #e0955b
+    ;
+}
+
+.color-green {
+    color: green;
+}

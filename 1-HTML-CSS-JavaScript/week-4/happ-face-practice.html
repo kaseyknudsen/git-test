@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;200;300;400&family=Lato:wght@300;700&family=Montserrat:wght@100;200;300;400;500&family=Playfair+Display:wght@400;600&family=Questrial&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Murphy Face Game Practice</title>
+    <style>
+        /* Hex codes: Scarlet #B85042, Light Olive #E7E8D1, Light Teal #A7BEAE 
+        Beige #DDC3A5, Black-brown #201E20, Tan #E0A96D
+        */
+        body {    
+            background: linear-gradient(to right, rgb(221, 195, 165), rgb(224, 169, 109));
+            /* make a gradient color */
+            /* 
+            There are 2 types of gradients: radial & linear
+  -radial
+    -circular (moves outward from a center)
+    -linear (goes from L to R, Top to Bottom, etc)
+    -background: linear-gradient(to right, white, green);  //you can add as many colors as you want
+    -to make it easier on the eyes, use...linear-gradient(to right, rgb(94, 255, 126), rgb(x,x,x), rgb(x, x, x, x) //finish with rgba
+    -you can also say 'to top', 'to bottom', etc
+    -to make it diagonal: use 'to bottom right'
+        background: linear-gradient(160deg, rgb(94, 255, 126)     //starts dark in top right corner and gets gradually lighter. Experiment with the 'deg' num
+        background-size: cover;
+
+        *radial gradients*
+        background: radial-gradient(red, blue, green, white)
+        background-size: //this doesn't work with radial gradients
+        //you can also add percentages:
+            background: radial-gradient(red 20%, blue 40%, green 55%, white 65%) 
+        //you can also change the shape of the elipse...
+            background: radial-gradient(circle red 20%, blue 40%, green 55%, white 65%) 
+            */
+        }
+        h1 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            color: #201E20;
+            
+        }
+        p {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            color: #201E20;
+            
+        }
+        img {
+            position: absolute;
+        }
+
+        div {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+        }
+        #right-side {
+            left: 50%;
+            border-left: 4px solid #201E20;
+        }
+        button {
+            position: absolute;
+            margin-top: 50%;
+            background-color: #E0A96D;
+            font-family: 'Playfair Display', serif;
+            height: 40px;
+            color: #201E20;
+            transition: 1s ease all;
+            border: 3px solid #201E20
+            
+        }
+        button:hover {
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body onload="generateFaces()">
+    <h1>Murphy Matching Game</h1>
+    <p>Click on the extra Murphy Face on the left side<p>
+
+    <div id="left-side"></div>
+    <div id="right-side"></div>
+    
+
+    <script>
+        //create variables for numFaces to increase on each click, theLeftSide, theRightSide, numAttempts
+        let numFaces = 3;
+        const theLeftSide = document.getElementById('left-side');
+        const theRightSide = document.getElementById('right-side');
+        let numAttempts = 0;
+        
+        //create a button to restart the game, make sure to document.body.appendChild
+        const newButton = document.createElement('button');
+        document.body.appendChild(newButton);
+        newButton.innerText = "Click Here To Add More Murphy Heads";
+        //create generateFaces function
+        const restartGameButton = document.createElement('button');
+        document.body.appendChild(restartGameButton);
+        restartGameButton.innerText = "Click to restart game"
+        restartGameButton.style.marginLeft = '275px';
+
+        function generateFaces() {
+            for (i = 0; i < numFaces; i++) {
+                let murphyImage = document.createElement('img');
+                theLeftSide.appendChild(murphyImage);
+                murphyImage.src = 'murphy-head.png';
+                murphyImage.style.width = '200px'
+                const randomTopMargin = Math.floor(Math.random() * 300 + 1);
+                const randomLeftMargin = Math.floor(Math.random() * 300 + 1);
+                murphyImage.style.top = randomTopMargin + 'px';
+                murphyImage.style.left = randomLeftMargin + 'px';
+                
+            }
+            // increment numAttempts
+            numAttempts += 1;
+            //clone left side to add to next group of faces
+            const leftSideMurphy = theLeftSide.cloneNode(true);
+            //remove last child on left side
+            leftSideMurphy.removeChild(leftSideMurphy.lastChild);
+            //append right side with left side images
+            theRightSide.appendChild(leftSideMurphy);
+            //add event listener to last child of left side
+            theLeftSide.lastChild.addEventListener('click', nextLevel);
+            //add event listener to left side to end game if the click is wrong
+            document.body.addEventListener('click', gameOver);
+            //add event listener to restart the game
+            restartGameButton.addEventListener('click', restartGame);
+
+
+            //create next level function
+            function nextLevel() {
+                event.stopPropagation();
+                numFaces += 3;
+                //this is how you remove all children without removing the node itself    
+                while (theLeftSide.firstChild) {
+                    theLeftSide.removeChild(theLeftSide.lastChild);
+                }
+
+                while (theRightSide.firstChild) {
+                    theRightSide.removeChild(theRightSide.lastChild)
+                }
+                generateFaces();
+
+            }
+
+            //create game over function
+
+            function gameOver() {
+                alert("Game over! You made " + numAttempts + " attempts.");
+                document.body.removeEventListener('click', gameOver);
+                theLeftSide.lastChild.removeEventListener('click', nextLevel);
+                
+            }
+
+            //create restart game function
+            function restartGame() {
+
+            }
+
+
+
+        }
+        
+
+
+    </script>
+</body>
+</html>

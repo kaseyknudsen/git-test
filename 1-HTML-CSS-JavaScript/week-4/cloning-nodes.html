@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Cloning Nodes Demo</title>
+    <style>
+        body {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myList">
+        <li>Red</li>
+        <li>Green</li>
+        <li>Blue</li>
+    </ul>
+
+    <button type="button" onclick="cloneListItem()">Copy just the last list item</button>
+    <button type="button" onclick="cloneListItemBranch()">Copy the last list item and its branch</button>
+
+    <script>
+        const listNode = document.querySelector('#myList');  //assigning the first item in #mylist to the variable listNode "red"
+        const nodeToCopy = listNode.lastElementChild;  //last list item of unordered list
+
+        //this will give you just the list node without the text
+        function cloneListItem() {
+            const copy = nodeToCopy.cloneNode();
+            listNode.appendChild(copy); 
+        }
+
+        //this will give you the list node with the text
+        function cloneListItemBranch() {
+            const copy = nodeToCopy.cloneNode(true);
+            listNode.appendChild(copy);
+        }
+
+        function copyAllListItems() {
+            
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+cloneNode()
+    -use to clone a single node
+    -you must have a reference to the exact node to clone
+    -const new clone = nodeToClone.cloneNode();  
+    -use either insertBefore or appendChild to inster into the DOM 
+
+cloneNode(true)
+    -this will clone an entire branch
+    -pass the boolean value true as an argument
+    -const newNode = noteToClone.clone(true);
+
+lastElementChild
+    -like firstChild/firstElementChild, this node property is a version of lastChild for elements only - skips text and other
+    types of nodes
+    -parentNode.lastElementChild
+
+
+    //challenge idea: how would you convert the code in the demo to copy the entire list instead of just one list item
+
+ -->

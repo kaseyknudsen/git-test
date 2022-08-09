@@ -1,0 +1,110 @@
+DOM stands for document object model. It provides an interface between JS and HTML
+
+there are tree graphs in data structure
+
+each point on the graph is called a node
+
+                                <html>---(parent)
+                         <head>         <body>---(child)  (head & body are sibling nodes. They have the same parent)
+                    <title>           <h1>  <p>   (h1 & p are sibling nodes of body)
+                      text    Hello world   text
+
+-in the DOM's case, the root node is the html element
+
+-we can refer to sections of the DOM as branches
+
+-we can refer to the Node's relationships as Parent, child & sibling nodes
+
+***text nodes***
+
+<html>
+<body id="theBody">
+    <p id="firstP>
+        Hello
+    </p>
+    World
+    <br />
+    <p id="secondP">
+        How are you?
+    </p>
+    </body>
+    </html>
+
+    represented in text nodes:
+                                    <html>
+                                       |
+                                <body id="theBody">
+                        |             |      |       |
+                    <p id="firstP>  World  <br />   <p id="secondP">
+                        |                                   |
+                       Hello                             How are you?
+
+*attributes are not given their own nodes
+*text nodes can be siblings to HTML nodes, not just their children
+*text nodes can't have children of their own
+*void elements can't have children (nothing can be nested inside them)
+
+
+***whitespace nodes***
+<html>
+<body>
+<p>Hello World</p>
+</body>
+</html>
+
+DOM representation:
+            <body>
+    |          |          |
+   text        P         text
+whitespace     |        whitespace
+              text
+           Hello World
+
+***whitespace nodes include line breaks, tabs and white spaces not in between text. The space between 'Hello' & 'World' doesn't count as a whitespace
+
+If the html was written as the following, the DOM would no longer have whitespace nodes
+<body><p>Hello World</p></body>
+DOM would look like:
+            <body>
+               |
+               p
+               |
+              text
+           Hello World
+
+
+***Node Relationships***
+
+--access body nodes: let node = document.body;  //document refers to the html document that is running the code
+This works because there is only ever 1 body node in a document.
+document.body is our entry point into the DOM!
+
+Node properties:
+    .parentNode
+    .firstChild & .lastChild
+    .nextSibling (very next sibling of a node)
+    .previousSibling (immediate previous sibling of a node)
+    .childNodes[...]: this will give an iterable called a NodeList, containing all child nodes of a node. Use bracket notation with index
+    to access each child in the list, e.g. .childNodes[0] for the first child, .childNodes[1] for the 2nd, etc
+    **there is only ever one parent, next sibling & previous sibling for each node
+    ***refer to my notebook for the diagram (or the week 4 slides)
+
+
+***recursion is when you call a function from within itself
+
+
+***LOCATING NODES*** (see 'locating-nodes' file)
+4 ways
+
+Traversing the DOM
+
+getElementsByTagName()
+getElementById()
+querySelector()
+
+
+
+Modifying HTML element attributes
+        
+
+                                     

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moving Head</title>
+
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="head-div">Murphy Head</div>
+        <img src="murphy-snout.png" alt="Murphy's Snout" width="200" id="head">
+    <script>
+        const head = document.getElementById('head');       
+        head.addEventListener('click', twoOnClickEvents);
+        let leftPosition = 0;
+        let murphyDirection = 'forward';
+        
+        function moveHeadWithSetInterval () {
+            murphyInterval = setInterval(changeDirections, 5);
+        }
+
+        function changeDirections() {
+            if (murphyDirection === 'forward') {
+                moveHeadForward();
+            } else {
+                moveHeadBack();
+            }
+            if (leftPosition >= 500) {
+                murphyDirection = 'backward';
+            } else {
+                murphyDirection = 'forward';
+            }
+        }
+
+        function moveHeadForward() {
+                head.style.left = leftPosition + 'px'
+                leftPosition += 2;
+            }
+
+        function moveHeadBack() {
+            head.style.left = leftPosition + 'px';
+            leftPosition -= 2;
+        }
+
+        function twoOnClickEvents () {
+            changeSize();
+            moveHeadWithSetInterval();
+        }
+
+        function changeSize () {
+            head.style.width = '25%';
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Relationship Practice</title>
+</head>
+<body>
+    <h1 id="h1Tag">If I declare document.body as the parent note, this would be the firstChild?</h1>
+        <p id="lineGoesBelow" onClick="createHrElementFunction()">Buttons</p>
+            <div>
+            <button type="button" onClick="parentsAndChildren()">Click for the answer</button>
+            <button type="button" onClick="changeColor()">Click for blue text</button>
+            </div>
+        <p id="lineGoesAbove" onClick="createHrElementAbove()">Will this also change?</p>
+
+    <script>
+        const parentNode = document.body;
+
+        function parentsAndChildren () {
+            const buttonColor = document.querySelector('button').style.backgroundColor = 'green';
+        }
+
+        function changeColor() {
+            document.getElementById("h1Tag").style.color = 'blue';      //this is h1
+        }
+
+        function createHrElementFunction() {
+            const newElement = document.createElement("hr");
+            const parentNode = document.getElementById("lineGoesBelow");
+            parentNode.appendChild(newElement);
+        }
+        function createHrElementAbove() {
+            const newElement = document.createElement("hr");
+            const parentNode = document.getElementById("lineGoesAbove");
+            parentNode.insertBefore(newElement, parentNode.firstChild);
+        }
+
+    </script>
+</body>
+</html>

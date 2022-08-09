@@ -1,0 +1,98 @@
+<!-- 
+    CSS Ruleset/Rule. 'p' is the selector. It can be used with any html element. everything inside the curly braces makes up
+    the 'declaration block'
+    Selector
+    Declaration Block
+    Declaration
+    property name/property
+    property value/value
+
+    this is a CSS 'ruleset' or 'rule':
+      p (p is the 'selector'){
+          color: blue; (this is the declaration. color is the property name, blue is the property value)
+      }
+
+      There are 3 ways to add CSS: External stylesheets, internal stylesheets & inline styles
+
+      External stylesheet is recommended!
+
+      CSS rulesets written inside text doc with .css extension
+      In HTML doc, add <link> element inside <head>: <link rel="stylesheet" href="css/styles.css" />
+        'rel' stands for relationship. Always set this to 'stylesheet'
+        for href attribute, provide path to external stylesheet
+
+        *this css path can be to a local file, or to stylesheet hosted elsewhere on the web, often on a CDN (content delivery network).
+        For example:
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+  Internal stylesheet:
+        use <style> element inside HTML doc's <head>. Write CSS rulesets inside the <style> element:
+          <style>
+            p{
+              color: red;
+            }
+          </style>
+
+  Inline Styles:
+          use 'style' attribute in an html element to directly apply a style. Write CSS declarations inside the style attribute's value:
+          <p style="color:red;">This text will be red.</p>
+
+  **avoid inline styles and internal stylesheets for 2 main reasons:
+          1) Harder to maintain/update/organize
+          2)They can only apply to a single webpage; external stylesheet can be applied to unlimited number of webpages
+
+  * 3 primary kinds of selectors: element/type, class, id
+          **this is an element selector:
+          p {
+              color: red;
+            }
+          **this is called a class selector (the period is also known as a 'full class' character). CSS relies heavily on class selectors
+          because they are the most flexible and reusable.
+          .text-primary {
+            color: red;
+          }
+          <h1 class="text-primary"> this text will be red.<h1>
+          <p class="text-primary">this text will be red too.</p>
+          
+          **this is an ID selector. Create an id selector with a # followed by the id name. Each id name can only be used once per
+          html document. Use ID selectors sparingly. Classes are preferred.
+          #copyright {
+            font-size: 12px;
+          }
+
+  **Class vrs. ID attribute**
+          main difference: classes can be applied to multiple elements; ids should be used as a unique identifier on only one element
+          in the document. Be careful not to name 2 ids the same thing. If you do, the browser will not warn you and ignore all but
+          the first element when you target that id
+
+    *
+    .text-primary {
+      color:red;
+    }
+    .bg-primary {
+      background: black;
+    }
+    You can set multiple classes on the same element. Then set both on the same element to combine the rules, separate with a space:
+    <p class="text-primary bg-primary">This text will be red with a black background.</p>
+ -->
+
+ <!-- more CSS -->
+ <!-- CSS Color values, <span> element, CSS Box model, margin, padding, border, shorthand properties, background, font, display
+   color, opacity, width/height, text-align, comments, lorem ipsum
+
+  **Color values
+    -all modern browsers support a set of 140 standard color names
+    -search for 'color picker'
+    -in VS code, hover over the color picker to get the hex value you are looking for
+
+**Span element
+  -non-semantic, in-line HTML element with no default meaning or style. Use as a hook for a class or ID without any unwanted side effects.    
+    you can use it for just pieces of text, or in the middle of a sentence:
+    <p> I wish some of this text was <span class='red-text'>colored red</span></p>
+
+
+**CSS Box Model
+  -
+
+  -->
+

@@ -1,0 +1,68 @@
+// for loops
+
+let i = 0;
+
+while (i < 5) {
+    console.log("Loop iteration #", i);
+    i += 1;
+}
+
+// can also be written as...
+/*notice we use i++ (post increment operator is best practice/conventional with for loops. Use += operator if you want to increment
+by another number aside from 1) */
+
+for (let i=0; i<5; i++) {
+    console.log('loop iteration #' + i);
+}
+
+/*for loop syntax: for (initialization (//only executed 1 time); condition; final expression (//executes after the first time the code runs)) {
+    code to execute
+} 
+
+
+-we can use loops and arrays to set up a dynamic number of iterations
+    const guestsArray = ["Jack", "Aravind", "Samira", "Haley", "Lydia", "Adrian"];
+    for (let y = 0; y < guestsArray.length; y++) {
+        console.log("Welcome to the party " + guestsArray[y] + "!");
+    }
+
+
+
+*** for of loop ***
+
+- this is the better choice when you need to iterate over every item in an array
+- for...of loop works with arrays and other iterables (data structures that contain lists of items that can be iterated over)
+-syntax: for(const/let variable name of array name) {
+    code to be executed
+}
+
+for (const guest of guestsArray) {
+    console.log("Welcome to the party " + guest + "!");
+}
+
+-if you want to reassign, change the case, etc, use 'let' instead of 'const' (each guest name will be uppercase)...
+for (let guest of guestsArray) {
+    guest = guest.toUpperCase();
+    console.log("Welcome to the party", guest + "!");
+}
+
+***loop control***
+
+-Break (exits a loop)
+-continue (continues to next iteration)
+
+//this will stop at 4
+for (let i=0; i < 10; i++) {
+    if (i === 5) {
+        break;
+    } 
+    console.log(i);}
+
+//this will skip 5 and continue on
+for (let i = 0; i < 10; i++) {
+    if (i === 5){
+        continue;
+    }
+    console.log(i);
+
+*/

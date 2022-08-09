@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Timer Demo 1</title>
+</head>
+<body>
+    <button type="button" onclick="setAlarm()">Set Alarm</button>
+
+    <script>
+        function setAlarm() {
+            const waitDuration = prompt('How long do you want to sleep?');
+            setTimeout(wakeMeUp, waitDuration);
+        }
+
+        function wakeMeUp() {
+            alert('WAKE UP!');
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- timers allow us to delay the execution of some code for a specific amount of time 
+
+setTimeout()
+    -setTimeout(functionName, waitDuration)   **don't include argument list, not even the parenthesis! Only the function name. We are just giving the function name to the timer.
+     give the amount of time in milliseconds - 1000 is 1 second, 10000 is 10 seconds, etc
+
+
+
+
+
+
+
+
+
+-->

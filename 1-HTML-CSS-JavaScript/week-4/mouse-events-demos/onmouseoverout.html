@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Onmouseover & Onmouseout Demo</title>
+    <style>
+        div {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 'red' and 'yellow' must be surrounded in single, not double quotes because we are already using double quotes-->
+    <div id="div" onmouseover="changeBackground('red');" onmouseout="changeBackground('yellow');" onmousedown="changeBackground('green');" onmouseup="changeBackground('orange');"> 
+        Move your mouse over this text, then move it out
+    </div>
+
+    <script>
+        function changeBackground(newColor) {
+            //document.getElementsByTagName('div')[0].style.background = newColor;
+            //document.getElementById('div').style.background = newColor;
+            //document.querySelector("div").style.background = newColor;
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    -onmouseover is when you start hovering over an element with your mouse 
+    -onmouseout is when you move off the element that you are hovering over
+-->
+
+<!-- Challenges
+
+    Using the demo code provided above, experiment with the following optional challenges:
+Update the code in onmouseoverout.html by adding onmousedown and onmouseup inline event handlers 
+to the div element thus that the onmouseover and onmouseout events are preserved as-is, but when 
+you click down on the div in the browser, the div text turns green, and when you release the mouse 
+button, the div text turns orange. 
+
+Update the code in onmousedownup.html to use a single function 
+that handles both the onmousedown and onmouseup events, as you saw it's possible to do in the 
+onmouseoverout.html demo, by passing the color to change to as an argument.
+
+
+Update all three files to use document.getElementById instead of document.getElementsByTagName. 
+Then try updating them all to use document.querySelector. 
+ -->

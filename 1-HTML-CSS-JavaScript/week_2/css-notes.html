@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Demo</title>
+    <style>
+
+        div {
+            width: 400px;
+            padding: 10px;
+            border: 10px solid;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>CSS Box Model</div>
+</body>
+</html>
+
+
+<!-- dashes mean that there are no values set in the css box model -->
+<!-- paragraph has extra margins set by default -->
+
+<!-- shorthand property:
+    margin:
+        div {
+            margin-top: 10px;
+            margin-right: 5px;
+            margin-bottom: 4px;
+            margin-left: auto;
+        }
+    *this can be written shorthand as follows (it will apply them in clockwise order):
+    div {
+        margin: 10px 5px 4px auto;
+    }
+
+    *if you give two values, the values will go (1st value=top/bottom, 2nd value=left/right):
+        div {
+            margin: 5px 10px;
+        }
+
+    *if you give one value, it's the equivalent of setting all the margins to that value
+    give on
+        div {
+            margin: 5px;
+        }
+
+    *how to horizontally center an element:
+    div {
+        margin: auto;
+    }
+
+    If the margin property has three values:
+
+        margin: 10px 5px 15px;
+        top margin is 10px
+        right and left margins are 5px
+        bottom margin is 15px
+
+-->
+
+<!-- CSS Padding:
+
+    works similar to margin:
+    div {
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+      }
+      shorthand would be: 
+      div {
+          padding; 5px 10px 20px 30px;
+      }
+    -->
+
+    <!-- CSS Border properties:
+    
+        div {
+            border-color: blue;
+            border-style: solid;
+            border-width: 5px;
+        }
+        shorthand (border-style is required, the other 2 are optional. The order of values does not matter):
+        div {
+            border: blue solid 5px;
+        }
+        *border-style is required. allowed values include: solid, dotted, dashed, double & more. The default border-style is 'none'. If you
+        enter the other properties without border-style, they won't show up.
+    -->
+
+    <!-- Background common properties:
+        div{
+            background-color: green;
+            background-image: url("strawberry.jpg");
+            background-size: 100px;
+            background-position: center;
+            background-repeat: repeat-x;
+            height: 200px;
+        } 
+    shorthand (order doesn't matter, unless you are using position & size. They must be joined with a slash, with position first): div {
+        background: green url("strawberry.jpg") center/100px repeat-x;
+    }
+    
+    -->
+
+    <!-- Font properties:
+        div{
+            font-style: italic;
+            font-size: 18px
+            font-weight: bold;
+            font-family: Cambria, Georgia, serif;
+        }
+        Shorthand: div {
+            font: italic 18px bold Cambria, Georgia, serif;
+        }
+            * font-family should contain multiple fonts, comma separated & in order of preference, in case preferred font is not available.
+            Always provide a generic font e.g. serif or sans-serif as a final fallback font.
+
+            * When using the font shorthand property, both font-size and font-family are required; the others are optional. The font family
+            must be set last; aside from this, the order of values doesn't matter
+
+    -->
+
+    <!-- Display property is one of the most important properties in CSS for layout (no shorthand)
+        most common are:
+        display: block;
+        display: inline;
+        display: inline-block;
+        display: none;
+
+        *Elements with display: block; element begins on a new line and can be given width & height properties
+        *Elements with display: inline; elements will stay on the same line and cannot be given width & heights properties
+        *Elements with display: inline-block; will stay on the same line but can accept width & height properties
+        *Elements with display: none; elements are not shown
+    
+    -->
+
+    <!-- color, opacity, width & height, text-align
+        -color sets the text color
+        -opacity sets the element opacity. Set opacity between 0 & 1 %. 0% is completely transparent, 1% is completely apparent, .1% is 10% 
+        -width & height can be px or % or auto
+            width: 10px;    height: 10px;
+            width: 50%;     height: 50%;
+            width: auto;    height: auto;
+            **number & unit (e.g. px; can omit unit is number is 0). No space between 10px. Not 10 px. Auto lets browser figure it out.
+        -text align: set alignment of text in an element
+            text-align: left;
+            text-align: right;
+            text-align: center;
+            text-align: justify;
+    -->
+    <!-- a CSS comment looks like this: /* */ -->
+
+    <!-- the cascade: specificity and selectors Part 1:
+    
+        THe "C" in CSS: One HTML page can have many different sources for styles: multiple external style sheets. an internal style sheet, inline
+        styles. user-agent stylesheet (browser defaults), user stylesheet.
+
+        To understand the algorithm, you have to understand CSS specificity
+        -inline styles have the highest level of specificity of all selectors, and IDs beat everything else (2nd highest level of specificity). Class is next (3rd).
+        Element is the least specific.
+        -the placement of the CSS link in the html page is important to the algorithm. If you place it above the style element, it will read the the internal 
+        style sheet. If you put the CSS link below the style element, it will read the external style sheet:
+
+        Example 1: The color will be red
+        <title>CSS specificity demo</title>
+        <style>
+            h1 {
+                color: blue;
+            }
+        </style>
+        <link rel="stylesheet" href="css/styles.css"/> (color is red)
+
+        Example 2: The color will be blue
+        <title>CSS specificity demo</title>
+         <link rel="stylesheet" href="css/styles.css"/> (color is red)
+        <style>
+            h1 {
+                color: blue;
+            }
+        </style>
+
+        -if there are rule-sets that conflict with each other, the last one that is read will win. The other properties will still be read.
+-->
+
+
+<!-- HTML File looks like this -->
+<!-- 
+    <div style="background: yellow" class="bg-red" id="bg-green>"
+    </div>
+
+
+ -->
+<!-- CSS File looks like this: -->
+<!-- div {
+    background: blue;   **element/type selector
+} 
+.bg-red {
+    background: red;    **class selector**
+}
+#bg-green {
+    background: green;  **ID selector
+}
+-->
+
+<!-- Specificity Point Values -->
+    <!-- INline Styles: 1000
+    ID selector: 100
+    Class selector: 10
+    Element/type selector: 1 -->
+
+
+    <!-- The Cascade: specificity and selectors Part 2: 
+    -grouping selectors
+    -psudeo-classes
+    -attribute selectors
+    -combinators
+    -more on specificity point values
+    -CSS inheritance
+    
+    Apply the same ruleset to multiple selectors at once. Write each selector on same line, comma separated:
+    h1, #id1, .class1 {
+        background: green;
+    }
+    
+    Pseudo-classes: use pseudo classes to narrow down elements to those in a particular state. Not used on their own,
+    but attached to other selectors
+    Syntax: selector:pseudo-class
+    div:hover - selects div currently being hovered over
+    input:focus - selects input currently in focus
+    a:visited - selects all anchor links that have been previously clicked on
+
+    Attribute selectors
+    -choose elements based on what attributes they contain
+    -specify attribute name only, or include the value
+    -don't exist on their own, are attached to another selector
+    Syntax: selector[attribute]
+        Example: div[lang] - selects all div elements with a lang attribute
+                 input[type="submit"] - selects input element with a type of "submit" only
+                 .my-class[required]
+
+    Combinators
+    -descendant selector (space)
+        form div (this will only select div elements that are inside form elements)
+        <form>
+            <fieldset>
+                <div>...</div>
+            </fieldset>
+        </form>
+    -child selector (>)
+        body > h1 (will only select elements that are direct children of the body element)
+        <body>
+            <h1>...<h1>
+        </body>
+    -adjacent sibling selector (+)
+        p + img (only will select <img> elements that come right after a <p> element)
+    -general sibling selector (~)
+        p ~ img (will select any img elements that come after the <p> element, but not necessarily right after)
+            <p></P>
+            <div></div>
+            <img/>
+    -->
+
+    <!-- more on specificity point values (see screen shot):
+    
+    (12 points) form > input[required] input:focus (11 points)-->
+
+    <!-- CSS inheritance:
+        Some (not all) CSS properties are inherited from the parent element to child elements. IN this example, span will inherit color, but not border
+        <div>
+            HTML:
+            <span>what color is this text?</span>
+            CSS:
+            div {
+                color: blue;
+                border: 2px black;
+            }
+        </div>
+    -->
+
+    <!-- general rule, more general ones should be toward the to and more specific should
+    be toward the bottom 
+
+    absolute: position of relative or absolute
+
+    use percentages or REM when possible
+
+-->

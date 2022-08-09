@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Create and Add Nodes Demo</title>
+    <style>
+        p {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="firstP" onclick="insertNewElement()">Click this text to insert a new hr element to the page</p>
+
+    <p id="secondP" onclick="insertNewText()">Click this text to append a new text child node to the page</p>
+
+    <p id="thirdP" onClick="insertMoreText()">Click here to insert more dynamic text</p>
+
+    <p id="fourthP" onclick="createAnotherElement()">Click here for a line break</p>
+
+    <script>
+        function insertNewElement() {
+            const newEl = document.createElement('hr');
+            const parentNode = document.querySelector('#thirdP');         //why the hashtag? is this only when you are creating a new element? or using query selector?
+            parentNode.insertBefore(newEl, parentNode.firstChild);         //will be added before the firstP element
+        }
+
+        function insertNewText() {
+            const newText = document.createTextNode(' This is dynamically added text!');    //this text will be added after the secondP element
+            const parentNode = document.getElementById('secondP');
+            parentNode.appendChild(newText);
+        }
+
+        function insertMoreText() {
+            const moreText = document.createTextNode(" More dynamic text!");
+            const parentNode = document.getElementById("thirdP");
+            parentNode.appendChild(moreText);
+        }
+
+        function createAnotherElement() {
+            const newEL = document.createElement("br");
+            const parentNode = document.querySelector("#fourthP");
+            parentNode.insertBefore(newEL, parentNode.firstChild);
+
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+***important note: once you create a new element, it doesn't automatically become part of the DOM tree. You need to specifically add it.
+
+createElement()
+    -allows you to create a new element node in JS
+    -is a method of the document object
+    -example: document.createElement('hr')  //creates a horizontal line across the page  
+    -typically, you'll want to assign it to a variable: const newEl = document.createElement('hr');
+
+createTextNode()
+    -const newText = document.createTextNode("your text goes here");
+    -method of the document object
+
+insertBefore()
+    -is a node method, you must use if on an existing node
+    -you must first figure out an existing node in the DOM to act as the parent node for the node to insert
+    -parent.insertBefore(newEl that you want to insert, parentNode.firstChild //the node inside the parent node that you want to insert it before)
+
+
+appendChild()
+    -add a node to an existing DOM
+    -parentNode.appendChild(newText);   //will automatically append this new node as a child of the parent node (the very last child node)
+    -you can use append child to append any kind of node, not just text
+
+
+
+
+ -->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Timer Demo 2</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+<body onload="startMovingBanana()">
+    <img src="images/banana.png" alt="A yellow banana image" />
+    <button type="button" onClick="clearInterval(bananaTimer);">STOP BANANA</button>
+    <script>
+        let xPosition = 0;
+        let theBanana = document.querySelector('img');
+        let bananaTimer = 0;
+
+        function startMovingBanana() {
+            bananaTimer = setInterval(moveBanana, 50);
+
+        }
+        function moveBanana() {
+            xPosition += 1;
+            theBanana.style.left = xPosition + 'px';
+           
+        }
+    </script>
+</body>
+</html>
+
+<!-- we are recursively calling the moveBanana function so it calls itself over and over again because it's calling itself inside another function -->
+
+<!-- 
+clearTimeout()
+    -setTimeout() returns a numeric timer ID as its return value - assign to this variable:
+        let timerID = setTimeout(functionName, waitDuration)
+    -Stop the timer with the clearTimeout() by giving it that specific timer ID
+        clearTimeout(timerID);
+
+
+SetInterval()
+    setInterval(functionName, waitDuration)
+    -instead of running just once, it will run it over and over again (ClearInterval() will stop it)
+
+ClearInterval()
+    -like setTimeout(), setInterval also returns a numeric ID that you can assign to a variable:
+    letTimerID = setInterval(functionName, waitDuration)
+    -stop the timer with clearInterval() by giving it that specific timer ID:
+        clearInterval(timerID);
+
+ -->

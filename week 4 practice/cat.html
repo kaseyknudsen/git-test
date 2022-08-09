@@ -1,0 +1,40 @@
+<!-- <html lang="en">
+<body onload="doSomething()">
+    <img src="cat.png" width=400 alt="A cat" />
+    <script>
+        function doSomething() {
+            const theImg = document.getElementsByTagName('img')[0];
+            document.body.appendChild(theImg.cloneNode(true));
+            document.body.removeChild(document.body.lastElementChild);
+        }
+    </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<body onload="doSomething()">
+    <img src="cat.png" width="400" alt="A cat" />
+    <script>
+        function doSomething() {
+            const theImg = document.querySelector('img');
+            document.body.appendChild(theImg.cloneNode());
+            document.body.removeChild(document.body.firstElementChild);
+        }
+    </script>
+</body>
+</html> -->
+
+<html lang="en">
+<body onload="doSomething()">
+    <img src="cat.png" width="400" alt="A cat" />
+    <script>
+        function doSomething() {
+            const theImg = document.getElementsByTagName('img')[0];
+            document.body.appendChild(theImg.cloneNode());
+            document.body.appendChild(theImg.cloneNode());
+            document.body.removeChild(document.body.lastElementChild);
+        }
+    </script>
+</body>
+</html>

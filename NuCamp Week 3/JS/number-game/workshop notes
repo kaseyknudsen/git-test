@@ -1,0 +1,6 @@
+null = tp in not there. use this to declare an empty variable./
+
+undefined = no tp left. Helps to debug.
+
+separate your concerns. Important phrase in programming. Keep your files separate (JS & CSS).
+

@@ -1,0 +1,61 @@
+/*
+ -strings are iterables
+ - even though each strings is considered to be a single value, it can also be broken down into a set of characters
+ -although a string is not an array, in many ways, JS will treat a string similar to an array of characters
+
+Example:
+const myStr = 'abcdefg';
+for(const x of myStr) {
+    console.log(x);
+}
+returns:
+a
+b
+c
+d
+e
+g
+
+myStr[0] will return 'a'
+myStr[5] will return 'f'
+
+-you can use the length property on strings
+    myStr.length returns 7
+    myStr[myStr.length - 1] returns 'g'
+
+
+***string methods***
+
+-indexOf
+    const myStr2 = 'caboose';
+    const letterB = myStr2.indexOf('b');
+    console.log(letterB);
+
+includes()
+    -myStr.includes('b') will return true
+    -myStr.includes('boo') will return true
+
+
+slice()
+    -myStr.slice(2,5) //returns 'boo'
+
+
+these methods work on strings alone: 
+    toLowerCase()
+    toUpperCase()
+    split()
+
+    split()
+        -converts a string to an array, providing as an argument a separator to determine where to split the string, such as a space or comma
+        const myStr3 = "little red balloon";
+        myStr3.split(' ');  //you need to add an actual space between the quotes, otherwise it will split up every single letter. Returns:
+        ['little', 'red', 'balloon']
+
+        const myStr4 = "small,medium,large";
+        myStr4.split(',');
+        //returns: ['small', 'medium', 'large']
+
+
+
+
+*/

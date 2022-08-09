@@ -1,0 +1,20 @@
+JS was originally created as an addition to 
+netscape, a web browser that existed before
+firefox. IN 1995, netscape hired Bandon Eich
+to create a new programming language to beforeembedded into the
+Navigator--this became Javascript
+
+1996--Javascript submitted to international
+students body, ECMA international
+
+1997--first official specification released
+under the name ECMAscript
+
+Techincally, JS is considered as an implementation
+of ECMAScript- more or less synonymous
+
+ES6 contains many improvements
+
+Vanilla Javascript refers to the core JS
+technologies without use of additional
+technologies (w/o frameworks & libraries)

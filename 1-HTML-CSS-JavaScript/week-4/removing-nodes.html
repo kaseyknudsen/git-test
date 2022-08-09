@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Removing Nodes Demo</title>
+    <style>
+        body {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="myList">
+        <li>Chicago Bulls</li>
+        <li>Portland Trail Blazers</li>
+        <li>Miami Heat</li>
+        <li>Phoenix Suns</li>
+
+        <!-- listNode.childNodes in the console will return [text, li, text, li, text, li, text, li, text] 
+              -the text nodes are NOT the Chicago Bulls, Portland, etc. The text nodes are the children of the
+            list nodes (not siblings)-->
+
+    </ul>
+
+    <button type="button" onclick="removeListFirstChild()">Remove list first child with removeChild()</button>
+    <button type="button" onclick="removeAllListChildren()">Remove all list children with removeChild()</button>
+    <!-- we need to remove the whitespace from the html so that the user doesn't need to click twice. The best way to deal
+    with this is to use first element child -->
+    <button type="button" onclick="removeList()">Remove entire list with remove()</button>
+    <button type="button" onClick="resetButton()">Click here to reset the page</button>
+    <p>Reload the page to reset the DOM and bring the list back.</p> 
+
+    <script>
+        const listNode = document.querySelector('#myList');
+
+        function removeListFirstChild() {
+            //listNode.removeChild(listNode.firstChild);
+            listNode.removeChild(listNode.firstElementChild); //this will prevent the whitespace issue
+        }
+
+        function removeAllListChildren() {
+            while (listNode.firstChild) {
+                listNode.removeChild(listNode.firstChild);
+            }
+        }
+        
+        function removeList() {
+            listNode.remove();
+        }
+
+        function resetButton() {
+            //how the hell would you do this?
+
+        }
+        //create an html reset button that creates the list on the page again via JS (as if we refreshed the page)
+        //figure out how to create a loop to go through all the child nodes and remove every other child
+    </script>
+</body>
+</html>
+
+
+<!-- 
+-when you remove a node, you remove the whole branch, including all the children
+
+remove()
+nodeToRemove.remove();
+
+
+removeChild()
+-you need a reference to a parent node
+parentNode.removeChild(parentNode.firstChild);
+
+
+
+firstElementChild
+-similar to firstChild
+parentNode.firstElementChild
+-will return the first element child of a node, skipping any text nodes or other kinds of nodes
+
+
+
+
+***to remove all the children without removing the node, use a while loop
+this loop will remove all children of the parentNode, but leave the parentNode
+while(parentNode.firstChild) {
+    parentNode.removeChild(parentNode.firstChild)
+}
+
+
+ -->

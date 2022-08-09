@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find The Extra Murphy Head</title>
+</head>
+<style>
+    img {
+        position: absolute;
+    }
+
+    div {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+    }
+    #right-side {
+        position: absolute;
+        left: 500px;
+        border-left: 2px solid #B85042;
+    }
+    h1 {
+        /* text-align: center; */
+        font-family: 'Courier New', Courier, monospace;
+        color: #B85042;
+        transition: all 2s ease;  
+    }
+    h1:hover {
+        color: black;
+    }
+
+
+    p {
+        /* text-align: center; */
+        font-family: 'Courier New', Courier, monospace;
+        color: #B85042;
+        transition: all 2s ease;
+    }
+
+    p:hover {
+        color: black;
+    }
+
+    body {
+        background-color: #E7E8D1;
+    }
+
+   
+</style>
+<body onload="generateFaces2()">
+    
+        <h1>Murphy Matching Game</h1>
+        <p>Click on the extra Murphy Head on the left side</p>
+        <!-- <button id="restart-button">Click Me to Restart Game</button> -->
+    <div id="left-side"></div>
+    <div id="right-side"></div>
+                
+    <script>
+        let correctEntry = false;
+        let numMurphyHeads = 0;
+        do {
+            const level = prompt("Choose easy, medium or difficult.").toLocaleLowerCase();
+            if (level === 'easy') {
+                numMurphyHeads += 2;
+                correctEntry = true;
+            } else if (level === 'medium') {
+                numMurphyHeads += 5;
+                correctEntry = true;
+            } else if (level === 'difficult') {
+                numMurphyHeads += 7;
+                correctEntry = true;
+            } else {
+                alert("You have not entered a valid level. Please try again.");
+            }
+            
+        } while (!correctEntry);
+
+        console.log(numMurphyHeads);
+        const theLeftSide = document.getElementById("left-side");
+        const theRightSide = document.getElementById("right-side");
+        let numAttempts = 0;
+        const button = document.createElement("button");
+        button.textContent = "Click me to restart the game";
+        document.body.appendChild(button);
+        button.style.position = "absolute";
+        button.style.marginTop = "550px";
+        // button.style.marginLeft = "400px";
+        button.style.backgroundColor = "#B85042";
+        button.style.border = "4px solid #A7BEAE";
+        button.style.padding = "10px";
+        button.addEventListener("click", restartGame);
+        
+        
+
+        function generateFaces2() {
+            for (let i = 0; i < numMurphyHeads; i++){
+                let head = document.createElement("img");
+                theLeftSide.appendChild(head);
+                head.src = "murphy-head.png";
+                head.style.width = "150px";
+                const randomTop = Math.floor(Math.random() * 350 + 1);
+                const randomLeft = Math.floor(Math.random() * 350 + 1);
+                head.style.top = randomTop + "px";
+                head.style.left = randomLeft + "px";
+            }
+
+            numAttempts += 1;
+            const leftSideImages = theLeftSide.cloneNode(true);
+            leftSideImages.removeChild(leftSideImages.lastChild);
+            theRightSide.appendChild(leftSideImages);
+            theLeftSide.lastChild.addEventListener("click", nextLevel);
+            theLeftSide.addEventListener("click", gameOver);
+            
+        }
+
+        function nextLevel() {
+            event.stopPropagation();
+            numMurphyHeads += numMurphyHeads;
+
+            while (theLeftSide.firstChild) {
+                theLeftSide.removeChild(theLeftSide.lastChild);
+            }
+            while (theRightSide.firstChild) {
+                theRightSide.removeChild(theRightSide.lastChild);
+            }
+            generateFaces2();
+        }
+
+        function gameOver() {
+            alert("Game over! You made " + numAttempts + " attempt(s).");
+            theLeftSide.removeEventListener('click', gameOver);
+            theLeftSide.lastChild.removeEventListener("click", nextLevel);
+        }
+
+        function restartGame() {
+            window.location.reload();
+        }
+
+        
+
+
+        
+    </script>
+</body>
+</html>

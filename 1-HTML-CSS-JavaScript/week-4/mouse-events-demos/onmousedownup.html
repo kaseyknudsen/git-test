@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Onmousedown & Onmouseup Demo</title>
+</head>
+<body>
+    <h1 onmousedown="changeBackground('red');" onmouseup="changeBackground('white')">Click Me</h1>
+
+    <script>
+        const h1 = document.querySelector('h1');
+
+        function changeBackground(newColor) {
+            h1.style.background = newColor;
+        }
+        function revertBackground(newColor) {
+            h1.style.background = newColor;
+        }
+    </script>
+</body>
+</html>
+
+<!-- Update the code in onmousedownup.html to use a single function 
+that handles both the onmousedown and onmouseup events, as you saw it's possible to do in the 
+onmouseoverout.html demo, by passing the color to change to as an argument. -->

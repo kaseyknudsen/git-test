@@ -1,0 +1,42 @@
+<!-- img is a void element
+it requires a src attribute: path to image file
+common rule of thumb is to use JPG for images & PNG for digitally created graphics
+always use an alt attribute for 
+1)accessibility
+2)if image cannot be loaded, the text will show instead
+3)helps search engines to get more info about your webpage-->
+<img src="images/ext-icon.png" alt="Photo of a dog"/>
+
+<!-- <img> width & height attributes 
+<img src="someImage.jpg" alt="Photo of a dog" width="200" height="100"/>
+dimensions are in px, but you don't type px into the value.
+If you only type either width or height, the browser will default to the original ratio
+-->
+
+<!-- video element 
+    new in HTML5
+    <video src="someVideo.mp4" controls>
+    video element supports MP4, OGG, WEBM
+    text between the start and end tag is called 'fallback content'. It's useful is someone's browser doesn't support video:
+    <video src="someVideo.mp4" controls>Your browser does not support HTML5 Video. Here is <a href="SomeVideo.mp4>a link to
+    the video instead.</video>
+    *controls is a boolean attribute. Not required, but it will cause the video controls to show up within the embedded video.
+    *you can specify the width and height
+    *boolean attribute 'loop' causes the video to replay after it finishes
+    *don't use autoplay
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video and Images</title>
+</head>
+<body>
+    <h1>Video Player Example</h1>
+    <video src="videos/install-extension.mp4" controls
+    width="400" loop>Your browser does not support HTML5 Video. Here is<a href="https://kaseyknudsenmusic.com/teaching#teaching-philosophy">
+        a link to the video instead</a></video>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+    
+
+</head>
+<body>
+    <!-- onCLick is the event handler -->
+    <!-- <button type="button" onclick ="getName()">Click Me</button> -->
+    <!-- script element lets us write JS inside HTML 
+    typically, this should be at the end of the body
+    element (before closing tag)-->
+    <script src="JS/javascript-hello-world.js"></script>    
+</body>
+</html>
+
+<!-- Variables
+    * = is the assignment operator
+    * first initialize the variable
+    let variable; = let can change
+    const keyword; const can't be reassigned
+    -2015 ES6 introduced let 
+    and const. Before, there was 
+    only var. Var is still used in
+    legacy programs
+    * null & undefined. Null represents the intentional absence of a value
+    * undefined is the value given to variables that have been declared but not inititialized
+ -->
+
+ <!-- functions
+    the function name contains the parameter list
+    * one way to call a function from HTML
+    is to use the onClick event handler
+
+    functions always return a single value. If you do not provide that value
+    it returns the value of undefined
+   function getArea(width, length) {
+       return width*length;
+   }
+   let area = getArea(3, 4);
+   alert(area);
+
+   Use camelCase. Exception: for variables not meant to be set or
+   changed during a program's execution, use SCREAMING_SNAKE_CASE, example:
+   const MAX_ITEMS = 10;
+-->
+
+<!-- the javascript console is part of your browser's built in
+development tools 
+
+Yellow error messages can often be ignored
+Red error messages need to be addressed
+
+console.log is a built in function that we can use to log information that we don't
+want to have show up on the normal webpage view
+
+console.log takes a single string as it's argument
+
+you  can use the circle with the line thru it symbol in  the console
+to clear the console w/o erasing the variables
+
+a function declaration doesn't reduce to a single value
+
+the JS console can be used for 3 things:
+    -test out small pieces of code
+    -view error & warning messages
+    -write messages to the console yourself
+-->
+
+<!-- If statements-->
+
+<!-- Truthy & falsy
+    -Values can be converted to other data types - a number to a string
+    a string to a boolean, boolean to a number, etc
+    -A non boolean value that would be true if converted to Boolean
+    is considered truthy; likewise, a non-boolean value that would be
+    false if converted to Boolean is falsy
+-->
+
+<!-- examples of falsy values:
+    -false
+    -0
+    - -0
+    On
+    "" (empty string) 
+    -null
+    -undefined
+    -NaN
+    -document.all
+
+    -Everything else is considered truthy-->
+
+    <!-- example:
+        **if there is no content, it will be falsy. Sometimes you want
+        to check that a value holds some truthy value, that it doesn't
+        contain null/undefined/any other falsy values:
+
+    if(password) {
+        ...code to check if password is correct...
+    } else {
+        prompt("You must enter a password: ");
+    }
+
+-->
+<!-- operators 
+    values in an operation are called operands. 
+    Operator with 1 left and 1 right operand: binary operator
+    operator with 1 operand: unary operator
+    operator with 3 operands: ternary operator
+
+    Comparison operators: all comparison operators are binary. They 
+    compare 2 values and return Boolean true or false. There
+    are 2 types: 
+    equality: ===, == (will perform type coercion with types don't match), !== (strict inequality), 
+        != (loose inequality, will perform type coercion)
+    relational: >, < >=, <=
+        -string operands are compares in lexicographical order, where a is a lower/lesser & z is higher/greater. If 
+        characters match, compare next character.
+
+    Questions: null === undefined returns false; null == undefined returns true. Which one is converted by type coercion?
+
+    Logical operators: 
+    And
+    Or
+    Not
+    Double Not
+    && and || (and/or) are binary operators
+    ! is unary. Example: !x
+
+    -The 6 falsy values: false, null, undefined, empty string, NaN, 0.
+        Each expression returns the value of the first falsy operand:
+        12 && 'cheetah' returns 'cheetah'
+        'cheetah' && 12 returns 12
+        12 && null returns null
+        undefined && 'cheetah' returns undefined
+-->
+
+<!-- logical NOT operator
+
+!true returns false
+!false returns true
+!'cat' returns false
+!(3>2) returns false
+!'nucamp' === true returns false
+!('nucamp === true) returns true->
+    *use parentheses around the operand to ensure ! operates on the entire
+    operand and not just the first value in it -->
+
+    <!-- Double not operator (bang-bang) 
+    Not a new operator, but a clever use of the ! operator as a 
+    shorthand for Boolean conversion
+    Boolean function()
+    Boolean(123) returns true
+    !123 returns false
+    !!123 returns true (reverses navigation)
+    
+    -->
+
+    <!-- switch statement:
+        switch(expression) {
+            case value:
+                statement to begin execution if expression matches this value
+            break;
+            case value:
+                statement to begin execution if expression matches this value
+            break;
+            case value:
+                statement to begin execution if expression matches this value
+            break;
+            default:
+                statement to execute if expression matches no case value
+        }
+    
+    -->
+
+    <!-- operators 
+    addition assignment operator +=
+    subtraction assignment operator -=
+    increment operator ++
+    decrement operator --
+    
+    addition & subtraction assignment operators are binary
+    increment & decrement operators are unary - add or subtract 1 from their operand variable
+    they can be prefix: ++variable
+    they can also be postfix: variable ++
+    
+    * the increment & decrement operators are not advisable to use, but here is what they do...
+    let y = 1;
+    ++y or --1 will increment/decrement the value by 1
+    y++ returns the value before implementation, but the value will be the new value
+    
+    -->
+<!-- while loops
+
+let i = 0;
+while (i < 5)
+ {
+     i += 1;
+     console.log("This is iteration #" + i);
+ }
+
+-->
+
+<!-- a variation of the while loop is the do while loop:
+do {
+    code to first run once, then loop while the condition evaluates to true
+} while (condition to be evaluated);
+
+* with the while loop, the condition is evaluated first, so if the condition is false in the beginning, the code inside the block never
+executes. With the do while loop, it will run 1x before the condition is evaluated
+
+
+let i = 5;
+
+while i < 5 {
+    i += 1;
+    console.log("this code will never run because it will always evaluate to false")
+}
+
+let i = 5;
+
+do {
+    i += 1;
+    console.log("this code will run only one time");
+} while (i < 5);
+--> 
+
+<!-- this will be an infinite loop until you say yes: 
+    
+let answer = '';
+do {
+    answer = prompt("Do you like chocolate?");
+} while (answer !== "yes");  --> 
+
+<!-- understanding scope
+javascript has lexical scope, which means the scope of a variable depends on where it was declared
+
+local has block scope & function scope
+
+variables using let and const possess block scope. They are only accessible within the code block in which they were declared, as well as any
+child blocks
+
+Code block: any set of statements executed as part of a function definition, if or switch statement, while or do...while loop, etc (
+    anything inside a set up curly braces)
+)
+
+*there is a difference between not defined (variable has been declared but not defined) & undefined (variable hasn't been declared at all)
+
+*scope is inherited from the parent block to the child block
+
+*you can have variables with the same name in different code blocks
+
+if (true) {
+    let testVar = 1;
+    if (true) {
+        let testVar (this is now it's own unique variable) = 2;
+    }
+} 
+-->
+<!-- if (true) {
+    let testVar = 1;
+    if (true) {
+      let testVar = 2;
+      console.log("In the child block, testVar is " + testVar);
+    }
+    console.log("In the parent block, testVar is " + testVar);
+    
+  } -->
+
+  <!-- Function scope:
+
+    local scope: similar to black scope but only applies to function blocks
+    block scope is used by variables declared with let and const keywords
+    function scope is used by variables declared with pre-ES6 var keyword
+
+    *testVar will be available outside of the if block if we use var. If it was in a function block, it would not be available.
+if (true) {
+  var testVar = 1;
+}
+console.log(testVar);
+
+-->

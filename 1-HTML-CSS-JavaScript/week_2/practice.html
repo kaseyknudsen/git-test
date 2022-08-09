@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Form</title>
+    <style>
+        html {
+            margin:  10px 10px 10px 10px;
+            padding: 5px 5px 5px 5px;
+        }
+
+        section {
+            display: block;
+            height: 60px;
+            width: 400px;
+            /* display: block; */
+            /* display: inline;
+            display: inline-block;
+            display: none; */
+        }
+        div:hover {
+            background-color: rgb(227, 231, 16);
+        }
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <form action="" method="post">
+            <label for="test">Enter you information here:</label>
+            <input type="text" id="test">
+            <input type="submit" value="Go">
+        </form>
+    </section><br>
+
+    <section>
+        <form action="" method="">
+            <div>       
+            Enter Your Preferred Reeds:
+            </div>   
+                <select name="reeds">
+                    <option value="Rico">Rico</option>
+                    <option value="Vandoren">Vandoren</option>
+                    <option value="Java">Java</option>
+                    <option value="ZZ">ZZ</option>
+                    <option value="V16">V16</option>
+                    <option value="Rico Jazz Select">Rico Jazz Select</option>
+                </select>
+            
+    </section><br>
+    <section>
+        What Kind of mouthpiece do you prefer?<br>
+        Jody Jazz <input type="checkbox" name="mouthpiece" value="Jody Jazz" />
+        Meyer <input type="checkbox" name="mouthpiece" value="Meyer" />
+        Otto Link <input type="checkbox" name="mouthpiece" value="Otto Link" />
+        Brillhart <input type="checkbox" name="mouthpiece" value="Brillhart" />
+    </section><br>
+
+    <section>
+        Who is your favorite saxophonist?<br>
+        <label for="cp">Charlie Parker</label> 
+        <input type="radio" id="cp" name="saxophonist" value="CharlieParker" />
+        <label for="JC">John Coltrane</label> 
+        <input type="radio" id="JC" name="saxophonist" value="JohnColtrane" />
+        <label for="OC">Ornette Coleman</label> 
+        <input type="radio" id="OC" name="saxophonist" value="OrnetteColeman" />
+        <label for="JL">Joe Lovano</label> 
+        <input type="radio" id="JL" name="saxophonist" value="JoeLovano" />
+    </section><br>
+
+    <section>
+        How would you rate your teacher, on a scale of 1-10?<br>
+        <input type="range" name="teacherRange" min="1" max="10">
+    </section><br>
+
+    <section>
+        What color are your eyes?<br>
+        <input type="color" name="eyeColor" />
+    </section>
+    
+    <section>
+        Upload your file by clicking this button: <br>
+        <input type="file" name="newFile">
+        <input type="submit" value="submit file" />
+    </section>
+
+    <section>
+        <fieldset>
+        <legend>Your information:</legend>
+        <input type="text" name="firstName" placeholder="Your first name" required />
+        </fieldset>
+    </section><br>
+
+    <section>
+    Enter feedback here: <br>
+    <textarea name="teacherFeedback" rows="10" cols="120" placeholder="Feedback here" required></textarea>
+    </section>
+    </form>
+</body>
+</html>

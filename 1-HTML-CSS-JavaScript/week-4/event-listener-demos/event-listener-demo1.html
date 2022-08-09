@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Event Listener Demo 1</title>
+    <style>
+        div {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div>Move your mouse over this text then off!</div>
+
+    <script>
+        const div = document.querySelector('div');
+        
+        div.addEventListener('mouseover', changeTextColor);
+        div.addEventListener('mouseout', revert);
+
+        function changeTextColor() {
+            div.style.color = 'orange';
+        }
+
+        function revert() {
+            div.style.color = 'black';
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+We can add event handlers with JS with the built-in addEventListener() method, instead of changing using the HTML inline. 
+-it is typically used as a method on a DOM element node
+-syntax: node.addEventListener('eventName', functionToRun)
+-the event name does NOT include the 'on' prefix and must be in quotes; the functionToRun must be the function name only, no argument list
+-one advantage is that you can use it to add more than one handler function to the same event, on the same element
+
+ -->

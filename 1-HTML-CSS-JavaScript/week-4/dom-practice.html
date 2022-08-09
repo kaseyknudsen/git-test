@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Practice</title>
+    <style>
+        div {
+            position: absolute;
+        }
+        button {
+            position: relative;
+            top: 550px;
+            left: 200px;
+            padding: 10px 15px;
+            border: 3px solid black;
+            background-color: steelblue;
+            font-weight: bolder;
+            
+        }
+        button:hover {
+            background-color: rgb(163, 211, 251);
+            padding: 25px;
+            transition: all 2s ease;
+        
+            
+        }
+    </style>
+</head>
+<body onClick="showPattern()">
+    <button type="button">Click Me!</button>
+
+    <script>
+
+        function showPattern() {
+            const colorsArray = ['red', 'blue', 'yellow', 'green', 'orange', 'purple', 'steelblue'];
+
+            let topPosition = 25;
+            let leftPosition = 25;
+            let width = 500;
+            let height = 500;
+
+            while (width > 50) {
+
+                const randomColorIndex = Math.floor(Math.random() * colorsArray.length);
+                console.log(randomColorIndex);
+                const newDiv = document.createElement('div');
+                newDiv.style.top = topPosition + 'px';
+                newDiv.style.left = leftPosition + 'px';
+                newDiv.style.width = width + 'px';
+                newDiv.style.height = height + 'px';
+                newDiv.style.background = colorsArray[randomColorIndex];
+                document.body.appendChild(newDiv);
+                
+
+                topPosition += 10;
+                leftPosition += 10;
+                width -= 20;
+                height -= 20;
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

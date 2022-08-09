@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tables</title>
+</head>
+<body>
+    <!-- all html tables start with the <table> element 
+        <table>
+            <tr> (rows)
+                <td></td> (table cells, or 'table data'. This where the content goes.)
+            </tr>
+        </table>
+        -->
+
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+    <!-- example 2 uses <th> instead of <td>, which makes the column header bold and centered-->
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <!-- use tbody for the remainder of the data -->
+        <tbody>
+            <tr>
+                <td>Idoru</td>
+                <td>William Gibson</td>
+                <td>1996</td>
+            </tr>
+            <tr>
+                <td>Crash</td>
+                <td>J.G. Ballard</td>
+                <td>1973</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+<!-- rowspan & colspan: add a rowspan or colspan attribute to a <th> or <td> element to cause it to span X number of cells.
+    example: rowspan="2"-->
+<!-- <table>
+    <tr>
+        <td rowspan="2">1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+</table> -->
+    <!-- <table>
+    <tr>
+        <td rowspan="4">1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+</table> -->
+<!-- colspan spans horizontally (across columns)  -->
+<table>
+    <tr>
+        <td colspan="2">1</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>8</td>
+    </tr>
+</table>
+

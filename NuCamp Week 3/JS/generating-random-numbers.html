@@ -1,0 +1,31 @@
+
+
+Math.random()
+Math.floor()
+
+Math is a built-in global object in JS that we can use to access certain math-related functions, which are called methods of the Math
+global object
+
+Math is always capitalized
+
+generates a random number between 0 & 1:
+let randomNumber = Math.random();
+*this includes 0, but does not include 1
+
+To generate a number between 0 - 6, but not including 6:
+let randomNumber = Math.random() * 6
+-this might return 3.029064879261344
+
+use floor to remove decimals
+
+const anInteger = Math.floor(3.14);
+-returns just the number to the left
+
+const randomInt = Math.floor(Math.random() * 6);
+-will return a random integer between 0 & 6 (not including 6)
+
+this will include 6...
+const randomInt = Math.floor(Math.random() * 6) + 1;
+
+
+

@@ -1,0 +1,106 @@
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    /* background-image: url("coffee_cup.jpeg"); */
+    background-size: cover;
+
+}
+
+h1 {
+    text-align: center;
+    color: rgb(16, 39, 242);
+    font-size: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 60px;
+    margin-left: 1px;
+}
+.image {
+    opacity: .5;
+    size: auto;
+}
+h2 {
+    
+    color: rgb(16, 39, 242);
+    font: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+    
+}
+.menu-header {
+    padding-bottom: 75px;
+    font-size: 30px;
+}
+
+table {
+    font-family: 'Courier New', Courier, monospace;
+    width: 75%;
+    margin-top: 30px;
+    margin-right: 2px;
+    margin-bottom: 60px;
+    margin-left: 1px;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+    border: blue double 5px;
+
+}
+
+h3 {
+    color: rgb(16, 39, 242);
+    font: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+}
+
+thead {
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+#submit-btn {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: blue;
+    color: white;
+    display: block;
+    width: 75px;
+    height: 25px;
+}
+
+form {
+    
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 50px;
+}
+
+.submit-review {
+    font-size: 17px;
+    font-style: italic;
+    
+}
+
+.name-field {
+    margin-bottom: 25px;
+
+}
+
+.rating-scale {
+    margin-bottom: 25px;
+
+}
+
+.feedback-section {
+
+}
+
+.fav-item  {
+    color: rgb(16, 39, 242);
+    font: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: normal;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--doctype is usually capitalized, but html isn't. This is by convention. It is not case sensitive. -->
+<!-- html must be the next tag that follows the DOCTYPE declaration -->
+<html lan="en">
+<head>
+    <!-- it's common not to nest <head> inside <html>, because we already know there is
+        only ever one <head> element -->
+    <!-- the head element contains metadata (data about data) -->
+    <!-- It isn't displayed on the webpage, it is used by the browser for info on how to display
+    the webpage. Always set 'charset' and 'title' elements -->
+    <!-- <meta> is a void element. charset = "utf-8" indicates character encoding used for document, set as 
+    first element inside <head>-->
+    <!-- <title> has a start and end tag with title text between, used for 
+        browser tab text and search engines. It's what will show show up in the search results page
+    and what will be displayed in the browser tab text-->
+    <meta charset = "utf-8" />
+    <title>VS Code Live Server Extension Setup</title>
+</head>
+<body>
+    <h1>How to install VS Code's Live Server Extension</h1>
+    <!-- <nav> is a block level, semantic element used to contain navigational links-->
+    <nav> 
+        <a href="#install">Install</a> | <a href="#use">Use</a> | <a href="#Live Server">Live Server</a> | <a href="#Video">Video</a> | <a href="https://www.google.com" target="_blank">Google</a>
+    </nav>
+    <section id="install">
+        <h2>Installation Instructions</h2>
+        <ol>
+            <li>
+                In <a href="https://code.visualstudio.com">Visual Studio Code</a>, click the <img src="images/ext-icon.png" alt="extensions view icon" />Extensions icon in the left column toolbar
+            </li>
+            <li>
+                In the search bar that appears, type <em>Live Server</em>.
+            </li>
+            <li>
+                Select the Live Server extension. It should be the top choice.
+            </li>
+            <li>
+                In the page for Live Server that appears, click the green install button.
+            </li>
+        </ol>
+    </section>
+    <section id="use">
+        <h2>Usage Instructions</h2>
+        <ul>
+            <li>
+                Server <strong>must</strong> be open to a folder to use Live Server.
+            </li>
+            <li>
+                In VS code's explorer, right click (windows) or control+click (masOS) on an HTML file. From the context menu that appears, select Open with Live Server.
+            </li>
+        </ul>
+        <img src="https://storage.googleapis.com/nucamp-production.appspot.com/learnfiles/open-with-live-server.png" alt="Image of open with Live Server">       
+    </section>
+    <section id="Live Server">
+        <h2>How to Know if You Have Installed Live Server Correctly</h2>
+        <ol>
+            <li>Right Click the file name</li>
+            <li>"Open with live server" will appear</li>
+            <li>The browser will open with your html page</li>
+        </ol>
+        <p>Learn more about <a href="https://code.visualstudio.com/docs/editor/emmet">Emmett</a> for VS code short cuts</p>
+    </section>
+    <section>
+        <h2>Video</h2>
+        <video src="videos/install-extension.mp4" controls loop>
+            Your browser does not support HTML5 Video. Here is <a href="videos/install-extension.mp4">A link to the video.</a>
+        </video>
+    </section>
+</body>
+</html>
+
+
+<!-- the body holds the content of webpage visible to the user -->
+<!-- visualize the html structure as a 'node tree' with different branches, or as a series
+of nested sets -->
+<!-- a block level element is separated by space in CSS... {display: block;} -->
+<!-- http://127.0.0.1:5500/install-extension.html is the loopback address. Local IP address that's
+only on my local computer -->
+<!-- A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+
+A block-level element always takes up the full width available (stretches out to the left and right as far as it can).
+
+Two commonly used block elements are: <p> and <div>.
+
+The <p> element defines a paragraph in an HTML document.
+
+The <div> element defines a division or a section in an HTML document. -->
+    <!-- these are block level elements: <address><article><aside><blockquote><canvas><dd><div><dl><dt><fieldset><figcaption><figure><footer><form><h1>-<h6><header><hr><li><main><nav><noscript><ol><p><pre><section><table><tfoot><ul><video> -->
+
+    <!-- these are inline elements:
+    <a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd><label><map><object><output><q><samp><script><select><small><span><strong><sub><sup><textarea><time><tt><var> -->

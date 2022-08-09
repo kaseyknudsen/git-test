@@ -1,0 +1,82 @@
+creating an array
+
+accessing array items 
+modifying array items
+array property: length
+array methods:
+    pop, push, shift, unshift, join, includes, indexOf
+
+to create an array, use the array literal syntax [item1, item2, item3, item4...]
+
+index items can be replaced by doing the following...
+
+    const groceryList = ['eggs', 'coffee beans', 'salad'];
+    groceryList[0] = 'bananas';
+    groceryList[2] = 'soap';
+
+all arrays have the count property: arrayname.length
+
+to find the last item in an array: groceryList[groceryList.length-1]. This would return 'soap'. In other words, it is the same as saying
+groceryList[2]
+
+-all arrays can access a large number of built in JS array functions, called array methods: arrayname.methodName()
+-some array methods have parameters, some don't
+-most array methods return a value
+-some array methods are mutators - they change the array; others are not
+
+        All of the following are mutator methods, and they all return a value:
+
+pop()
+    pop() removes item from the end of an array
+    groceryList = ["fruit", "beer", "pasta"];
+    const lastItem = groceryList.pop();
+    console.log(lastItem);
+
+push()
+    adds items to the end of an array
+    groceryList.push("milk");
+    console.log(groceryList);
+    //returns: ["fruit", "beer", "pasta", "milk"]
+    const newList = groceryList.push("wine");
+    console.log(newList); //this will return the length of the array, which is 5
+
+shift()
+    removes item from beginning of array
+    groceryList.shift()
+    console.log(groceryList)
+    const newNewList = groceryList.shift()
+    console.log(newNewList);  (returns 'fruit')
+    the return value is the item that was removed
+    -- changes index of other items (-1)
+
+unshift()
+    adds one or more items to the beginning of an array
+    groceryList.unshift("dog food", "soap");
+    console.log(groceryList);
+    returns ["dog food", "soap", "fruit", "beer", "pasta", "milk"]
+    return value is the new length of the array
+    -- changes index of other items (+1)
+
+
+
+    Following methods do NOT mutate the original array:
+
+join()
+    takes all items in an array and returns a string containing those items
+    takes an optional string argument, a comma is used as the default separator
+    groceryList2 = ["fruit", "beer", "pasta"];
+    const moreGroceries = groceryList2.join(); //you can whatever separator you want as an argument
+    console.log(moreGroceries); //returns fruit, beer, pasta
+    -join method does not mutate orignal array
+
+
+includes()
+    is used to check if an item exists inside an array
+    const itemInArray = groceryList.includes('soap');
+    //if item exists, it will return true
+
+indexOf()
+    also checks if an item is in an array, but instead of true or false, it returns the index of the item if it exists in the array
+    const itemIndex = groceryList.indexOf("soap");
+    itemIndex returns 2, (if it's in the array)
+    if item is not in the array, it returns -1

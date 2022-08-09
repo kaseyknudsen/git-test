@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+<body>
+    <!-- the form element formally defines it's contents as a form -->
+    <!-- type="text" creates a text box; type="submit" creates a button to submit the form -->
+    <!-- you need 2 attributes to submit a form to a server, "action" and "method" -->
+    <!-- action attribute: URL on a server that should run a server-side script (a small program) to handle the form submission -->
+    <!-- method attribute: can be set to "get" or "post". Get is used to send requests for data from a server, such as a search query. It
+        is inherently insecure. Post is used to send data to the server, both text and binary data such as images, any sensitive data that needs to be encrypted such as 
+         passwords-->
+    <form>
+        <input type="text" />
+        <input type="submit" value="Go" />    
+    </form><br>
+
+<section>
+    <form action="https://learn.nucamp.co/show_everything.php" method="post">
+        Enter your avatar name:
+        <input type="text" name="avatarName" placeholder="Avatar Name" />
+        <input type="submit" value="Go" />
+    </form>
+</section>
+
+<!-- input attributes:
+type: text, submit, many others
+name: required, single word, tells server what the data is. If you don't put a name, the input will be ignored
+value: default value to submit, also used for submit button text
+placeholder: appears in the field, but doesn't set the value of the field. It's 'hint' text to user about what to enter
+required: boolean, inputs with this attribute must be given a value before the form can be submitted-->
+
+<!-- more input types:
+checkbox
+radio -->
+<div>
+    <!-- only one checkbox doesn't require a value -->
+    Delivery? <input type="checkbox" name="Delivery" />
+</div>
+<div>
+    <!-- multiple checkboxes require value -->
+    Milk <input type="checkbox" name="groceries" value="milk" />
+    Eggs <input type="checkbox" name="groceries" value="eggs" />
+    Bread <input type="checkbox" name="groceries" value="bread" />
+</div>
+<!-- radio inputs should always be in a group of 2 or more. User can only select 1 from the group. The name should be the same for
+all the inputs in the group, but they should have a different value-->
+<div>
+    Pay by Cash <input type="radio" name="payment" value="cash" required />
+    Pay by Check <input type="radio" name="payment" value="check" required />
+</div> <br>
+<input type="submit" value="submit" />
+
+<!-- more input types:
+range: slider for a range between min & max values
+color: color picker
+file: file upload
+ -->
+ <!-- when you are using a form attribute, you need to add 'enctype' -->
+ <form action="handleform.php" method="post" encytpe="multipart/form-data">
+ <div>
+     My rating <input type="range" name="myRating" min="1" max="10" />
+ </div><br>
+ <div> 
+
+     Choose a color: <input type="color" name="myColor" />
+ </div><br>
+
+ <div>
+     Upload your file: <input type="file" name="myFile" />
+ </div><br>
+
+ <input type="submit" value="Submit" />
+
+</form><br>
+
+<!-- fieldset & legend are useful for giving structure to the contents of a form. Fieldset is used to group sets of form controls
+together (input is an example of a form control). <legend> is used to set a caption at the top of a <fieldset>--> 
+    <fieldset>
+        <legend>Your Information</legend>
+        <input type="text" name="firstname" placeholder="Your first name" required>
+        <input type="text" name="lastName" placeholder="Your Last Name" required>
+    </fieldset><br>
+
+    <!-- text area: multi-line text input form control. Control number of visible lines with rows attribute, 
+        width (# of characters per line) with cols attribute. If you want default text, place it between the <textarea> tags -->
+    <textarea name="feedback" rows="5" cols="60" placeholder="Your feedback here"></textarea><br><br>
+
+    <!-- select & option elements: used together to create a dropdown list.
+        similar to how ol/ul & li work together. select element much have a 'name' attribute. Each option element should have a value attribute -->
+    <select name="flavor">
+        <option value="mint">Mint</option>
+        <option value="cherry">Cherry</option>
+        <option value="lime">Lime</option>
+    </select><br><br>
+
+    <!-- label: surround a form control's caption text in a <label> element. Associate the label and form control by giving the label a 'for' attribute
+        and the form control an id attribute, then set their values to match. Then if the label is click or touched, the associated form control will 
+    become focused - easier to hit and more accessible. If you don't have a <label> element, clicking on the text will do nothing. -->
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+
+
+</body>
+</html>
+

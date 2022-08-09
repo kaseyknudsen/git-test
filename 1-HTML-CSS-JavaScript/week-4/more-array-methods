@@ -1,0 +1,84 @@
+/* concat()
+     a way to combine 2 arrays together
+     -does not mutate original arrays. It returns a new array with both arrays inside it.
+    -syntax: firstArray.concat(secondArray)
+     Example: 
+        const arrayOne = ["red", "yellow", "blue"];
+         const arrayTwo = ["green", "brown", "white"];
+         const newArray = arrayOne.concat(arrayTwo);
+         console.log(newArray);
+        ['red', 'yellow', 'blue', 'green', 'brown', 'white']
+
+     sort()
+    -alphabetically sorts array of strings
+    -mutates original array
+    -newArray.sort() returns...
+      ['blue', 'brown', 'green', 'red', 'white', 'yellow']
+
+    reverse()
+    -reverses the order of an array
+    -mutates original array
+    Example: newArray.reverse() returns...
+    ['yellow', 'white', 'red', 'green', 'brown', 'blue']
+
+    slice()
+        -copies part of an array and places it into a new array
+        -does not mutate original array
+        -return value is a new array with copies of the 'sliced' out items
+        -takes 2 arguments (both are optional)
+        -syntax: arrayName.slice(beginIndex, endIndex)
+        Example: 
+        const newArray2 = newArray.slice(2, 4) returns...
+        console.log(newArray2);
+        ['red', 'green'] //doesn't include 4
+        -if you don't provide a 2nd argument, it will include everything up to the end of the array
+        
+    splice()
+    -inserts, adds to, or removes items from an array at any point, not only the beginning or the end
+    -mutates original array
+    -syntax: arrayName.splice(atINdex, 0, item) //takes a minimum of 3 arguments. 2nd argument must always be 0 (that is the delete count).
+    Example:
+    const colorsArray =  ['blue', 'brown', 'green', 'red', 'white', 'yellow']
+    colorsArray.splice(2, 0, 'x'); //returns:
+    ['blue', 'brown', 'x', 'green', 'red', 'white', 'yellow']
+    -you can add multiple items to an array. Separate items with a comma. Example:
+     colorsArray.splice(2, 0, 'x','y', 'z') //returns:
+     ['blue', 'brown', 'y', 'z', 'a', 'x', 'green', 'red', 'white', 'yellow']
+     -to use splice to remove:
+        -syntax: arrayName.splice(atIndex, numItemsToRemove)
+        -splice returns the removed items. Example:
+        const colorsArray2 = ['blue', 'brown', 'y', 'z', 'a', 'x', 'green', 'red', 'white', 'yellow']
+        const removedItems = colorsArray2.splice(1, 3);
+        console.log(removedItems); //returns:
+        ['brown', 'y', 'z']
+        colorsArray2 is now: ['blue', 'a', 'x', 'green', 'red', 'white', 'yellow']
+    -use splice() to replace
+        -syntax: array.splice(atIndex, numItemsToReplace, item(s))
+        -splice returns the replaced items
+        -Example:
+            const testArray = ['a','b','c','d','e','f']
+            const replacedArray = testArray.splice(1,3,'uno');
+            console.log(replacedArray); //returns:
+            ['b', 'c', 'd']
+            testArray is now ['a', 'uno', 'e', 'f']
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    */

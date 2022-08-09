@@ -1,0 +1,15 @@
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(226, 213, 196);
+    color: red;
+    text-align: center;
+    border-style: solid;
+    display: inline-flex;
+    padding: 25px;
+}
+
+.btn {
+    display: block;
+    
+}
+    
